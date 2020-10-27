@@ -1,0 +1,96 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 5bd376f83d5c79e4a2325e9e5b2b36acfa039c241bc7c9e0c8ae774e208b7c53
+
+name:           mailing-list-reader
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/mailing-list-reader#readme>
+homepage:       https://github.com/githubuser/mailing-list-reader#readme
+bug-reports:    https://github.com/githubuser/mailing-list-reader/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/mailing-list-reader
+
+library
+  exposed-modules:
+      Parser
+  other-modules:
+      Paths_mailing_list_reader
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , lens
+    , lens-aeson
+    , megaparsec
+    , mtl
+    , parser-combinators
+    , taggy
+    , taggy-lens
+    , text
+  default-language: Haskell2010
+
+executable mailing-list-reader-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_mailing_list_reader
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , lens
+    , lens-aeson
+    , mailing-list-reader
+    , megaparsec
+    , mtl
+    , parser-combinators
+    , taggy
+    , taggy-lens
+    , text
+  default-language: Haskell2010
+
+test-suite mailing-list-reader-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_mailing_list_reader
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , lens
+    , lens-aeson
+    , mailing-list-reader
+    , megaparsec
+    , mtl
+    , parser-combinators
+    , taggy
+    , taggy-lens
+    , text
+  default-language: Haskell2010
