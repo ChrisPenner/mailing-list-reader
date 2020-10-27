@@ -32,6 +32,8 @@ dependencies:
 - taggy
 - taggy-lens
 - parser-combinators
+- wreq
+- blaze-markup
 
 ghc-options:
 - -Wall

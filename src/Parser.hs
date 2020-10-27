@@ -88,7 +88,6 @@ contentP :: Parser TL.Text
 contentP = do
     TL.pack <$> someTill anySingle (lookAhead (void $ try headerP) <|> eof)
 
-
 headerP :: Parser Header
 headerP = do
     preambleP
@@ -99,7 +98,6 @@ headerP = do
     references <- optional referencesP
     messageID <- messageIDP
     return $ Header {..}
-
 
 messageP :: Parser Message
 messageP = do

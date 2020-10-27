@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 5bd376f83d5c79e4a2325e9e5b2b36acfa039c241bc7c9e0c8ae774e208b7c53
+-- hash: bea07d3088585fd77c4d2cafa3714a5cf2854c3726b39c8e0fc76f8aef491760
 
 name:           mailing-list-reader
 version:        0.1.0.0
@@ -28,6 +28,8 @@ source-repository head
 library
   exposed-modules:
       Parser
+      RSS
+      Scraper
   other-modules:
       Paths_mailing_list_reader
   hs-source-dirs:
@@ -36,6 +38,7 @@ library
   build-depends:
       aeson
     , base >=4.7 && <5
+    , blaze-markup
     , bytestring
     , containers
     , lens
@@ -46,6 +49,7 @@ library
     , taggy
     , taggy-lens
     , text
+    , wreq
   default-language: Haskell2010
 
 executable mailing-list-reader-exe
@@ -58,6 +62,7 @@ executable mailing-list-reader-exe
   build-depends:
       aeson
     , base >=4.7 && <5
+    , blaze-markup
     , bytestring
     , containers
     , lens
@@ -69,6 +74,7 @@ executable mailing-list-reader-exe
     , taggy
     , taggy-lens
     , text
+    , wreq
   default-language: Haskell2010
 
 test-suite mailing-list-reader-test
@@ -82,6 +88,7 @@ test-suite mailing-list-reader-test
   build-depends:
       aeson
     , base >=4.7 && <5
+    , blaze-markup
     , bytestring
     , containers
     , lens
@@ -93,4 +100,5 @@ test-suite mailing-list-reader-test
     , taggy
     , taggy-lens
     , text
+    , wreq
   default-language: Haskell2010
